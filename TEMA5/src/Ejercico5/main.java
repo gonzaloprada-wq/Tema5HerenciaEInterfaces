@@ -5,16 +5,21 @@ import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
-			
+		
+		int selector=0;
 		
 		
 		do {
 		
 		imprimirMenu();
 			
+		selector=seleccionarNumero();
 			
-		}while()
+		seleccionarSwitch(selector);
 		
+		}while(selector!=4);
+		
+		System.out.println("Saliendo...");
 		
 	}
 
@@ -24,7 +29,8 @@ public class main {
 		System.out.println("BIENVENIDO!");
 		System.out.println("1. Introducir triángulo.\r\n"
 				+ "2. Introducir rectángulo.\r\n"
-				+ "3. Mostrar polígonos.\r\n"
+				+ "3. Mostrar polígonos.\r\n"+
+					"4. Salir"
 				+ "");
 		
 		
@@ -64,5 +70,26 @@ public class main {
 		return selector;
 		
 	}
+	
+	public static void seleccionarSwitch(int selector){
+		
+		switch(selector) {
+		
+		case 1: 
+			
+			
+			
+			
+			
+			break;
+		
+		
+		}
+		
+		
+		
+	}
+	
+	
 	
 }
