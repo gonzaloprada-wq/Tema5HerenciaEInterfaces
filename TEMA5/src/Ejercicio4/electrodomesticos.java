@@ -128,46 +128,50 @@ public class electrodomesticos {
 
 	}
 
-	public void precioFinal() {
+public double precioFinal() {
+		
+		double precioTotal = this.precioBase;
 
-		switch (getConsumoEnergetico()) {
-
-		case "A" -> this.precioBase += 100;
-
-		case "B" -> this.precioBase += 80;
-
-		case "C" -> this.precioBase += 60;
-
-		case "D" -> this.precioBase += 50;
-
-		case "E" -> this.precioBase += 30;
-
-		case "F" -> this.precioBase += 10;
-
-		default -> this.precioBase += 0;
-
+		switch (this.consumoEnergetico) {
+			case "A":
+				precioTotal += 100;
+				break;
+				
+			case "B":
+				precioTotal += 80;
+				break;
+				
+			case "C":
+				precioTotal += 60;
+				break;
+				
+			case "D":
+				precioTotal += 50;
+				break;
+				
+			case "E":
+				precioTotal += 30;
+				break;
+				
+			case "F":
+				precioTotal += 10;
+				break;
 		}
-		precioPorTamaño();
 		
-	}
-
-	public void precioPorTamaño() {
-		int sumaDePrecio = 0;
-		
-		if (this.peso >= 0 && this.peso < 20) {
-			sumaDePrecio += 10;
-
-		} else if (this.peso >= 20 && this.peso < 50) {
-			sumaDePrecio += 50;
-
-		} else if (this.peso >= 50 && this.peso < 80) {
-			sumaDePrecio += 80;
+		if (this.peso >= 0 && this.peso <= 19) {
+			precioTotal += 10;
+			
+		} else if (this.peso >= 20 && this.peso <= 49) {
+			precioTotal += 50;
+			
+		} else if (this.peso >= 50 && this.peso <= 79) {
+			precioTotal += 80;
+			
 		} else if (this.peso >= 80) {
-			sumaDePrecio += 100;
-		} else {
-			sumaDePrecio += 0;
+			precioTotal += 100;
 		}
-		
-		this.precioBase+=sumaDePrecio;
+
+		return precioTotal;
 	}
+
 }
