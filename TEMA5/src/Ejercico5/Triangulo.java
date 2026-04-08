@@ -73,6 +73,6 @@ public class Triangulo extends Poligono {
 	@Override
 	public String toString() {
 		return super.toString() + " Rectangulo[lado1=" + getLado1() + " lado2=" + getLado2() + " lado3=" + getLado3()
-				+ " area=" + area() + "]";
+				+ " area=" + area() + "]\n\n";
 	}
 }

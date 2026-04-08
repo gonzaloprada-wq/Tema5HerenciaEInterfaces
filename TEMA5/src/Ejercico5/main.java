@@ -6,6 +6,8 @@ public class main {
 
 	public static void main(String[] args) {
 		
+		gestion nuevoGestion = new gestion();
+		
 		int selector=0;
 		
 		
@@ -30,7 +32,7 @@ public class main {
 		System.out.println("1. Introducir triángulo.\r\n"
 				+ "2. Introducir rectángulo.\r\n"
 				+ "3. Mostrar polígonos.\r\n"+
-					"4. Salir"
+				  "4. Salir"
 				+ "");
 		
 		
@@ -78,18 +80,116 @@ public class main {
 		case 1: 
 			
 			
-			
+			añadirTriangulo();
 			
 			
 			break;
 		
+		case 2:
+			
+			añadirRectangulo();
+			
+			break;	
+			
+		case 3:
+			
+			gestion gestionActual = new gestion();
+			
+			gestionActual.imprimirPoligonos();
+			
+			break;	
+			
 		
 		}
 		
+	
 		
 		
 	}
 	
+	public static double recibirDatoDouble(){
+		
+		Scanner reader = new Scanner(System.in);
+
+		boolean numeroValido=true;
+		
+		double selector=0;
+		
+		do {
+		
+		 selector=0;
+		
+		try {
+			
+			System.out.println("\nIngresa numero (0 o menor es automaticamente 1): ");
+			
+			selector = reader.nextDouble();
+			
+			numeroValido = true;
+			
+		} catch (Exception e) {
+
+			numeroValido=false;
+			
+			System.out.println("ERROR!");
+			reader.nextLine();
+			
+		}
+		
+		}while(!numeroValido);
+		
+		return selector;
+		
+	}
 	
+	public static void añadirTriangulo(){
+		
+		Triangulo nuevoTriangulo = new Triangulo();
+		
+		gestion gestionActual = new gestion();
+		
+		
+		System.out.println("Vamos a añadir el lado 1: ");
+		
+		double lado1=recibirDatoDouble();
+		
+		System.out.println("Vamos a añadir el lado 2: ");
+		
+		double lado2=recibirDatoDouble();
+		
+		System.out.println("Vamos a añadir el lado 3: ");
+		
+		double lado3=recibirDatoDouble();
+		
+		nuevoTriangulo.setLado1(lado1);
+		nuevoTriangulo.setLado2(lado2);
+		nuevoTriangulo.setLado3(lado3);
+		
+		gestionActual.añadirPoligonoListadO(nuevoTriangulo);
+		
+		
+	}
 	
+	public static void añadirRectangulo(){
+		
+		Rectangulo nuevoRectangulo= new Rectangulo();
+		
+		gestion gestionActual = new gestion();
+		
+		
+		System.out.println("Vamos a añadir el lado 1: ");
+		
+		double lado1=recibirDatoDouble();
+		
+		System.out.println("Vamos a añadir el lado 2: ");
+		
+		double lado2=recibirDatoDouble();
+		
+		nuevoRectangulo.setLado1(lado1);
+		nuevoRectangulo.setLado2(lado2);
+	
+		gestionActual.añadirPoligonoListadO(nuevoRectangulo);
+		
+		
+	}
 }

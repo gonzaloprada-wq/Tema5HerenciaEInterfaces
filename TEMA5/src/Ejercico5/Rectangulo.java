@@ -61,7 +61,7 @@ public class Rectangulo extends Poligono{
 	
 	@Override
 	public String toString() {
-		return super.toString()+" Rectangulo[lado1="+getLado1()+" lado2="+getLado2()+" area="+area()+"]";
+		return super.toString()+" Rectangulo[lado1="+getLado1()+" lado2="+getLado2()+" area="+area()+"]\n\n";
 	}
 	
 

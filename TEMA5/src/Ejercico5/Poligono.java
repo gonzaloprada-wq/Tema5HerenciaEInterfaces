@@ -45,7 +45,7 @@ abstract class Poligono {
 
 	@Override
 	public String toString() {
-		return "Poligono [numeroLados=" + getNumeroLados() + "]";
+		return "Poligono [numeroLados=" + getNumeroLados() + "]\n\n";
 	}
 	
 	
