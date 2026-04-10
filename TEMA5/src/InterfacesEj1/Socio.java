@@ -69,6 +69,7 @@ public class Socio implements Comparable{
 		Socio otroSocio=(Socio) o;	
 		
 		return Integer.compare(this.id, otroSocio.id);
+		
 	}
 	
 }
